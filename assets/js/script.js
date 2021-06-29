@@ -36,7 +36,7 @@ async function getWikiPage(page) {
 getWikiPage("California");
 
 async function getBreweryData(region, regionType) {
-    var url = "https://api.openbrewerydb.org/breweries?per_page=50?by_" + regionType + "=" + region;
+    var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
     //return fetch Promise of region's brewery data
     return fetch(url)
     .then(function (response) {
@@ -55,7 +55,7 @@ function searchFormSubmit(event) {
     event.preventDefault();
 
     var searchRegion = document.querySelector('#search-input').value;
-    regionType = document.querySelector('#format-input').value;
+    var regionType = document.querySelector('#format-input').value;
 
     getBreweryData(searchRegion, regionType);
   }
