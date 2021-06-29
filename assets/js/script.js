@@ -1,6 +1,9 @@
-var wikiSection = $('#wiki');
+var wiki = $('#wiki');
+var wikiImages = $('#wiki-images');
+var wikiParagraphs = $('#wiki-paragraphs');
 var breweryArray = [];
 var searchForm = document.querySelector('#search-form');
+
 searchForm.addEventListener('submit', searchFormSubmit);
 
 async function getWikiPage(page) {
@@ -11,9 +14,10 @@ async function getWikiPage(page) {
         async: true,
         dataType: "json",
         success: function (data) {
-            var wikiText = data.parse.text["*"];
-            var pageSection = $('<div></div>').html(wikiText);
-            wikiSection.html($(pageSection).find('*'));
+            var wiki = data.parse.text["*"];
+            var pageSection = $('<div></div>').html(wiki);
+            wikiImages.html($(pageSection).find('img'));
+            wikiParagraphs.html($(pageSection).find('p'));
         },
         error: function (error) {}
     });
