@@ -1,4 +1,4 @@
-# project-oneProject title
+# Project One
 CheckList:
 Search for brewery
 Learn about location and area
@@ -11,7 +11,7 @@ User story:
 As an avid drinker that likes to travel, I want to know which breweries are in the areas I am traveling too
 
 Wireframe or sketch of the design:
-
+![Wireframe]()
 
 APIs to be used:
 OpenBreweries and Wikipedia

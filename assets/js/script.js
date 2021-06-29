@@ -47,4 +47,4 @@ async function getStateBreweryData(state) {
     });
 };
 
-getCityBreweryData("Georgia");
+getStateBreweryData("Georgia");
