@@ -33,7 +33,7 @@ async function getCityBreweryData(city) {
 getCityBreweryData("Atlanta");
 
 async function getStateBreweryData(state) {
-    var url = "https://api.openbrewerydb.org/breweries?by_city=" + state;
+    var url = "https://api.openbrewerydb.org/breweries?by_state=" + state;
     //return fetch Promise of state's brewery data
     return fetch(url)
     .then(function (response) {
