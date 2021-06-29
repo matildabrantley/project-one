@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brewery Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Project One</title>
 </head>
 <body>
-    <h1>Project One</h1>
-    
+
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color: rgb(0, 0, 0);color: white;">
+        <h1> <strong>BrewHaHa</strong></h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                Search Breweries
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col align-self-center">
+                <form id="search-form" class="form w-100">
+                    <input id="search-input" class="form-input w-100" type="text" placeholder="Search Breweries">
+                    <select id="format-input" class="form-input w-100">
+                        <option value="" disabled selected>Select to search by city or state</option>
+                        <option value="city">City</option>
+                        <option value="state">State</option>
+                    </select>
+                    <button class="btn btn-info btn-block">Search</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
