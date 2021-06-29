@@ -1,4 +1,7 @@
 var wikiSection = $('<div></div>');
+var breweryArray = [];
+var searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', searchFormSubmit);
 
 async function getWikiPage(page) {
     $.ajax({
@@ -32,38 +35,27 @@ async function getWikiPage(page) {
 
 getWikiPage("California");
 
-async function getCityBreweryData(city) {
-    var url = "https://api.openbrewerydb.org/breweries?per_page=50?by_city=" + city;
-    //return fetch Promise of city's brewery data
+async function getBreweryData(region, regionType) {
+    var url = "https://api.openbrewerydb.org/breweries?per_page=50?by_" + regionType + "=" + region;
+    //return fetch Promise of region's brewery data
     return fetch(url)
     .then(function (response) {
         //console.log(response);
         return response.json();
     })
     .then(function (data) {
-        console.log("City results");
+        console.log("Region results");
         console.log(data);
 
         return data;
     });
 };
 
-getCityBreweryData("Atlanta");
+function searchFormSubmit(event) {
+    event.preventDefault();
 
-async function getStateBreweryData(state) {
-    var url = "https://api.openbrewerydb.org/breweries?per_page=50?by_state=" + state ;
-    //return fetch Promise of state's brewery data
-    return fetch(url)
-    .then(function (response) {
-        //console.log(response);
-        return response.json();
-    })
-    .then(function (data) {
-        console.log("State results");
-        console.log(data);
+    var searchRegion = document.querySelector('#search-input').value;
+    regionType = document.querySelector('#format-input').value;
 
-        return data;
-    });
-};
-
-getStateBreweryData("Georgia");
+    getBreweryData(searchRegion, regionType);
+  }
