@@ -1,4 +1,4 @@
-var wikiSection = $('<div></div>');
+var wikiSection = $('#wiki');
 var breweryArray = [];
 var searchForm = document.querySelector('#search-form');
 searchForm.addEventListener('submit', searchFormSubmit);
@@ -33,7 +33,7 @@ async function getWikiPage(page) {
     // });
 };
 
-getWikiPage("California");
+getWikiPage("Atlanta");
 
 async function getBreweryData(region, regionType) {
     var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
@@ -56,6 +56,6 @@ function searchFormSubmit(event) {
 
     var searchRegion = document.querySelector('#search-input').value;
     var regionType = document.querySelector('#format-input').value;
-
     getBreweryData(searchRegion, regionType);
+    getWikiPage(searchRegion);
   }
