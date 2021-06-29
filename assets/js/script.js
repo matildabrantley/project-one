@@ -31,3 +31,20 @@ async function getCityBreweryData(city) {
 };
 
 getCityBreweryData("Atlanta");
+
+async function getStateBreweryData(state) {
+    var url = "https://api.openbrewerydb.org/breweries?by_city=" + state;
+    //return fetch Promise of state's brewery data
+    return fetch(url)
+    .then(function (response) {
+        //console.log(response);
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+
+        return data;
+    });
+};
+
+getCityBreweryData("Georgia");
