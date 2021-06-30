@@ -1,6 +1,7 @@
-var wiki = $('#wiki');
+var wikiContainer = $('#wiki');
 var wikiImages = $('#wiki-images');
 var wikiParagraphs = $('#wiki-paragraphs');
+var topTenContainer = $('#top-ten');
 var breweryArray = [];
 var searchForm = document.querySelector('#search-form');
 
@@ -14,8 +15,8 @@ async function getWikiPage(page) {
         async: true,
         dataType: "json",
         success: function (data) {
-            var wiki = data.parse.text["*"];
-            var pageSection = $('<div></div>').html(wiki);
+            var wikiContainer = data.parse.text["*"];
+            var pageSection = $('<div></div>').html(wikiContainer);
             wikiImages.html($(pageSection).find('img'));
             wikiParagraphs.html($(pageSection).find('p'));
         },
@@ -54,6 +55,10 @@ async function getBreweryData(region, regionType) {
         return data;
     });
 };
+
+function displayTopTen(){
+    //topTenContainer.children.eq(1).
+}
 
 function searchFormSubmit(event) {
     event.preventDefault();
