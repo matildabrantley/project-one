@@ -1,0 +1,65 @@
+#wrapper {
+    position: fixed;
+    top: 1vh;
+    background: rgba(0,0,0,.60);
+    width: 99vw;
+    height: 99vh;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    color: white;
+}
+
+h1 span {
+    color: rgb(253, 253, 197);
+}
+
+img {
+    border: double white 10px;
+}
+
+body {
+    background-image: url("buncha-beer.jpeg");
+    background-size: contain;
+    background-size: cover;
+}
+
+#search {
+    width: 30vw;
+    height: 50vh;
+    border-radius: 5px;;
+}
+
+.bg-dark {
+    background: rgba(1,1,1,.8);
+}
+  
+section {
+    grid-area: brew-info;
+    margin-left: 5%;
+}
+
+main {
+    border-radius: 5px;
+}
+
+
+#search-input {
+    color: black;
+    background-color: rgba(255, 255, 0, 0.333);
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+
+::placeholder {
+    color: white;
+}
+
+#format-input {
+    background-color: rgba(255, 255, 0, 0.323);
+    border-radius: 2px;
+}

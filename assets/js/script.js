@@ -17,25 +17,11 @@ async function getWikiPage(page) {
         success: function (data) {
             var wikiContainer = data.parse.text["*"];
             var pageSection = $('<div></div>').html(wikiContainer);
-            wikiImages.html($(pageSection).find('img'));
-            wikiParagraphs.html($(pageSection).find('p'));
+            wikiImages.html($(pageSection).find('img').eq(0));
+            wikiParagraphs.html($(pageSection).find('p').slice(0,3));
         },
         error: function (error) {}
     });
-    
-    // var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&prop=info&generator=search&inprop=url&gsrlimit=1&gsrsearch=" + page;
-    // //return fetch Promise of Wiki page
-    // return fetch(url)
-    // .then(function (response) {
-    //     //console.log(response);
-    //     return response.json();
-    // })
-    // .then(function (data) {
-    //     console.log(data.query.pages);
-
-    //     $('#wiki').html(data);
-    //     //return data.query.pages;
-    // });
 };
 
 getWikiPage("Atlanta");
@@ -48,17 +34,26 @@ async function getBreweryData(region, regionType) {
         //console.log(response);
         return response.json();
     })
-    .then(function (data) {
+    .then(function (breweryData) {
         console.log("Region results");
-        console.log(data);
+        console.log(breweryData);
 
+       // displayBreweries(breweryData)
         return data;
     });
 };
 
-function displayTopTen(){
-    //topTenContainer.children.eq(1).
-}
+// function displayBreweries(breweryData){
+//     //clears previous breweries on page except for original (used as prototype)
+//     while (topTenContainer.children().eq(1))
+//         topTenContainer.remove(topTenContainer.children().eq(1));
+//     for (var i = 0; i < breweryData.length; i++){
+//         var brewery = $('#brewery').clone();
+//         brewery.css("display", "inline-block");
+//         brewery.text(breweryData[i].name)
+//         topTenContainer.append(brewery);  
+//     }
+// }
 
 function searchFormSubmit(event) {
     event.preventDefault();

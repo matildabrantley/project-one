@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Brewery Database Search</title>
 </head>
@@ -16,25 +17,18 @@
 
     <div class="grid-container">
         <header>
-            <div class="jumbotron container-fluid text-center p-2">
-                <h1> <strong>BrewHaHa</strong></h1>
-            </div>
-            <div id="top-ten">
-                <span style="font-size: 1.3rem">Breweries in Area:</span>
-                <span>Brewery One</span>
-                <span>Brewery Two</span>
-                <span>Brewery Three</span>
-                <span>Brewery Four</span>
-                <span>Brewery Five</span>
-                <span>Brewery ...</span>
+            <h1> <strong><span>Brew</span>HaHa</strong></h1>
+            <span style="font-size: 1.3rem">Breweries in Area:</span>
+            <div id="top-ten" style="display: inline-block">
+                <a href="#brew-info" id="brewery">Brewery</a>
             </div>
         </header>
 
         <nav id="search">
             <div class="container">
                 <div class="row">
-                    <div class="col align-self-center">
-                        Search Breweries
+                    <div class="col align-self-center" style="color: white">
+                        Search for Breweries within a Region!
                     </div>
                 </div>
             </div>
@@ -44,11 +38,11 @@
                     <form id="search-form" class="form w-100">
                         <input id="search-input" class="form-input w-100" type="text" placeholder="Search Breweries">
                         <select id="format-input" class="form-input w-100">
-                            <option value="" disabled selected>Select to search by city or state</option>
+                            <option value="" disabled selected>Specify city or state (city is default)</option>
                             <option value="city">City</option>
                             <option value="state">State</option>
                         </select>
-                        <button class="btn btn-info btn-block">Search</button>
+                        <button id="search-button" class="btn btn-info btn-block">Search Area</button>
                     </form>
                 </div>
             </div>
@@ -60,14 +54,16 @@
             alt="..."/>
         </figure>
 
-        <section>
+        <section id="brew-info">
+            <div>
             Brewery Contact<br>
             Brewery Website
+            </div>
         </section>
 
         <main id="wiki">
-            <article id="wiki-paragraphs"></article>
             <section id="wiki-images"></section>
+            <article id="wiki-paragraphs"></article>
         </main>
     </div>
    
