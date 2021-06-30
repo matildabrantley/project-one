@@ -1,0 +1,60 @@
+.grid-container {
+    display: grid;
+  
+    grid-template-areas:
+      "header header header"
+      "search search search"
+      "brew-pic wiki wiki"
+      "brew-info wiki wiki";
+  
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 0.5fr 1fr 1fr;
+    grid-gap: 10px;
+  
+    height: 95vh;
+    width: 100vw;
+  }
+
+header {
+    grid-area: header;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding-bottom: 10px;
+    background-image: url("brewery-background.jpg");
+}
+
+header span {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: solid rgb(75, 63, 63) 1px;
+    border-radius: 3px;
+}
+
+nav {
+    grid-area: search;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+figure {
+    grid-area: brew-pic;
+    margin-left: 5%;
+    border: solid black 10px;
+}
+  
+section {
+    grid-area: brew-info;
+    margin-left: 5%;
+}
+
+main {
+    grid-area: wiki;
+    background-color: rgb(236, 230, 230);
+    border-radius: 10px;
+    margin-right: 5%;
+    padding-left: 2%;
+}
+
+  

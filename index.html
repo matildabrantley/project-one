@@ -5,40 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Project One</title>
 </head>
 <body>
 
-    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color: rgb(0, 0, 0);color: white;">
-        <h1> <strong>BrewHaHa</strong></h1>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col align-self-center">
-                Search Breweries
+    <div class="grid-container">
+        <header>
+            <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color: rgb(0, 0, 0);color: white;">
+                <h1> <strong>BrewHaHa</strong></h1>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col align-self-center">
-                <form id="search-form" class="form w-100">
-                    <input id="search-input" class="form-input w-100" type="text" placeholder="Search Breweries">
-                    <select id="format-input" class="form-input w-100">
-                        <option value="" disabled selected>Select to search by city or state</option>
-                        <option value="city">City</option>
-                        <option value="state">State</option>
-                    </select>
-                    <button class="btn btn-info btn-block">Search</button>
-                </form>
+            <div id="top-ten">
+                <span style="font-size: 1.3rem">Top Ten Breweries:</span>
+                <span>Brewery One</span>
+                <span>Brewery Two</span>
+                <span>Brewery Three</span>
+                <span>Brewery Four</span>
+                <span>Brewery Five</span>
+                <span>Brewery ...</span>
             </div>
-        </div>
+        </header>
 
+        <nav id="search">
+            <div class="container">
+                <div class="row">
+                    <div class="col align-self-center">
+                        Search Breweries
+                    </div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col align-self-center">
+                    <form id="search-form" class="form w-100">
+                        <input id="search-input" class="form-input w-100" type="text" placeholder="Search Breweries">
+                        <select id="format-input" class="form-input w-100">
+                            <option value="" disabled selected>Select to search by city or state</option>
+                            <option value="city">City</option>
+                            <option value="state">State</option>
+                        </select>
+                        <button class="btn btn-info btn-block">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <figure>
+            <img src="https://images.unsplash.com/photo-1603989872391-359eb0b42a58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+            class="img-fluid rounded-pill"
+            alt="..."/>
+        </figure>
+
+        <section>
+            Brewery Contact<br>
+            Brewery Website
+        </section>
+
+        <main id="wiki">
+            <article id="wiki-paragraphs"></article>
+            <section id="wiki-images"></section>
+        </main>
     </div>
+   
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
