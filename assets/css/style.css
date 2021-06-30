@@ -28,10 +28,13 @@ img {
 header {
     grid-area: header;
     text-align: center;
-    background-color: black;
     color: white;
     padding-bottom: 10px;
     background-image: url("brewery-background.jpg");
+}
+
+.jumbotron {
+    background-color: black;
 }
 
 header span {
@@ -39,8 +42,7 @@ header span {
     margin-right: 5px;
     border: solid rgb(75, 63, 63) 1px;
     border-radius: 3px;
-    color: skyblue;
-    text-decoration: underline;
+    color: yellow;
 }
 
 nav {
@@ -69,4 +71,6 @@ main {
     padding-left: 2%;
 }
 
-  
+#search-input, #format-input {
+    background-color: rgba(255, 255, 0, 0.123);
+}
