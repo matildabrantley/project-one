@@ -9,7 +9,7 @@ searchForm.addEventListener('submit', searchFormSubmit);
 async function getWikiPage(page) {
     $.ajax({
         type: "GET",
-        url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
+        url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
         dataType: "json",
