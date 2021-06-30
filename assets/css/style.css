@@ -1,3 +1,13 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+img {
+    border: double black 10px;
+}
+
+
+
 .grid-container {
     display: grid;
   
@@ -29,6 +39,8 @@ header span {
     margin-right: 5px;
     border: solid rgb(75, 63, 63) 1px;
     border-radius: 3px;
+    color: skyblue;
+    text-decoration: underline;
 }
 
 nav {
