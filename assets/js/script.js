@@ -1,19 +1,23 @@
-var wikiSection = $('<div></div>');
+var wiki = $('#wiki');
+var wikiImages = $('#wiki-images');
+var wikiParagraphs = $('#wiki-paragraphs');
 var breweryArray = [];
 var searchForm = document.querySelector('#search-form');
+
 searchForm.addEventListener('submit', searchFormSubmit);
 
 async function getWikiPage(page) {
     $.ajax({
         type: "GET",
-        url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
+        url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
         dataType: "json",
         success: function (data) {
-            var wikiText = data.parse.text["*"];
-            var pageSection = $('<div></div>').html(wikiText);
-            wikiSection.html($(pageSection).find('*'));
+            var wiki = data.parse.text["*"];
+            var pageSection = $('<div></div>').html(wiki);
+            wikiImages.html($(pageSection).find('img'));
+            wikiParagraphs.html($(pageSection).find('p'));
         },
         error: function (error) {}
     });
@@ -33,7 +37,7 @@ async function getWikiPage(page) {
     // });
 };
 
-getWikiPage("California");
+getWikiPage("Atlanta");
 
 async function getBreweryData(region, regionType) {
     var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
@@ -56,6 +60,6 @@ function searchFormSubmit(event) {
 
     var searchRegion = document.querySelector('#search-input').value;
     var regionType = document.querySelector('#format-input').value;
-
     getBreweryData(searchRegion, regionType);
+    getWikiPage(searchRegion);
   }
