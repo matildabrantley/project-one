@@ -73,3 +73,9 @@ iframe {
 .output {
     background: #eee;
 }
+img {
+    height: 500px;
+    width: 500px;
+    min-height: 320px;
+    object-fit: cover;
+}
