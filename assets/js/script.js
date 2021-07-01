@@ -7,6 +7,8 @@ var searchForm = document.querySelector('#search-form');
 
 searchForm.addEventListener('submit', searchFormSubmit);
 
+displayStoredSearches();
+
 async function getWikiPage(page) {
     $.ajax({
         type: "GET",
@@ -42,12 +44,12 @@ async function getBreweryData(region) {
         console.log("Region results");
         console.log(breweryData);
 
-       displayBreweries(breweryData)
+       displayBreweries(breweryData, region)
         return breweryData;
     });
 };
 
-function displayBreweries(breweryData){
+function displayBreweries(breweryData, region){
     //clears previous breweries on page except for original (used as prototype)
     breweryList.empty();
     for (var i = 0; i < breweryData.length; i++){
@@ -68,6 +70,9 @@ function displayBreweries(breweryData){
           
         breweryList.append(breweryTitle);  
     }
+
+    if (!getStoredSearches().includes(region))
+        addStoredSearch(region);
 }
 
 function displayBreweryInfo (e) {
@@ -137,7 +142,7 @@ function displayBreweryInfo (e) {
             brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
             break;
         case 2:
-            brewPic.attr("src", "https://images.unsplash.com/photo-1603989872391-359eb0b42a58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+            brewPic.attr("src", "/assets/images/beer-shelf.jpg");
             break;
         case 3:
             brewPic.attr("src", "/assets/images/stout-porter.jpeg");
@@ -157,8 +162,51 @@ function searchFormSubmit(event) {
     event.preventDefault();
 
     var searchRegion = document.querySelector('#search-input').value;
+
     getBreweryData(searchRegion);
     getWikiPage(searchRegion);
   }
 
-  function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}
+function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}
+
+  //retrieve localStorage storedSearches array and push to it, then append button
+function addStoredSearch(search){
+    var storedSearchesArray = getStoredSearches(); //get stored searches from localStorage
+    //push new item to local array
+    storedSearchesArray.push(search);
+    //set localStorage to updated array
+    localStorage.setItem("storedSearches", JSON.stringify(storedSearchesArray));
+    //now add button to search history
+    var storedSearch = $(document.createElement("button"));
+    storedSearch.text(search);
+    storedSearch.addClass('btn btn-info btn-block history-button');
+    storedSearch.on('click', function(){
+        getBreweryData(this.innerHTML);
+        getWikiPage(this.innerHTML);
+    });
+    $('#search').append(storedSearch);
+}
+
+function getStoredSearches() {
+    //if first search in search history
+    if (localStorage.getItem("storedSearches") === null)
+         localStorage.setItem("storedSearches", JSON.stringify(new Array()));
+     return JSON.parse(localStorage.getItem("storedSearches"));
+}
+
+//displays searches from previous page visits in localStorage
+function displayStoredSearches() {
+    var storedSearchesArray = getStoredSearches();
+    console.log(storedSearchesArray);
+    for (i in storedSearchesArray){
+        console.log(storedSearchesArray[i]);
+        var storedSearch = $(document.createElement("button"));
+        storedSearch.text(storedSearchesArray[i]);
+        storedSearch.addClass('btn btn-info btn-block history-button');
+        storedSearch.on('click', function(){
+            getBreweryData(this.innerHTML);
+            getWikiPage(this.innerHTML);
+        });
+        $('#search').append(storedSearch);
+    }
+}
