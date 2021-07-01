@@ -45,10 +45,21 @@ header {
     text-align: center;
     color: white;
     padding-bottom: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #list-header {
     display: none;
+}
+
+
+.brewery-title:nth-child(3n){
+    color: rgb(255, 255, 150);
+}
+
+.brewery-title:nth-child(3n - 1){
+    color: orange;
 }
 
 .jumbotron {
@@ -62,8 +73,13 @@ header a {
     color: yellow;
 }
 
-#brewery {
-    display: none;
+#details-button {
+    border-radius: 5px;
+}
+
+#details-button:hover {
+    box-shadow: 0px 0px 2px 2px rgb(255, 255, 150);;
+    filter: brightness(120%);
 }
 
 nav {
@@ -87,7 +103,6 @@ nav {
 
 #search-input:hover, #format-input:hover {
     box-shadow: 0px 0px 2px 2px gray;
-    padding: 5px;
 }
 
 #search-button {

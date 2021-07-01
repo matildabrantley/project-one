@@ -1,4 +1,4 @@
-var wikiContainer = $('#wiki');
+var wiki = $('#wiki');
 var wikiImages = $('#wiki-images');
 var wikiParagraphs = $('#wiki-paragraphs');
 var breweryList = $('#brewery-list');
@@ -66,6 +66,7 @@ function displayBreweries(breweryData, region){
         breweryTitle.brewStreet = breweryData[i].street;
         breweryTitle.text(breweryData[i].name);
         breweryTitle.css("display", "inline-block");
+        breweryTitle.addClass("brewery-title");
         $('#list-header').css("display", "block");
         $('#wiki').css("display", "block");
         breweryTitle.on("click", 
@@ -79,13 +80,15 @@ function displayBreweries(breweryData, region){
     if (!getStoredSearches().includes(region))
         addStoredSearch(region);
 
-    var detailedResults = $(document.createElement("button"));
-    detailedResults.text("Full Search Results");
-    detailedResults.on("click", function(){
-        location.assign("./search-results.html");
-        console.log(location);
-    });
-    $('#search').append(detailedResults);
+    if ($('#details-button').length == 0){
+        var detailedResults = $(document.createElement("button"));
+        detailedResults.attr("id", "details-button");
+        detailedResults.text("Full Search Details");
+        detailedResults.on("click", function(){
+            location.assign("./search-results.html");
+        });
+        $('#full-results').append(detailedResults);
+    }
 
 }
 
@@ -148,7 +151,7 @@ function displayBreweryInfo (e) {
     //put up a different brewery picture
     $('#brew-pic').css("display", "block");
     var brewPic = $('#brew-pic').find("img");
-    switch(Math.floor(Math.random()*6)){
+    switch(Math.floor(Math.random()*8)){
         case 0:
             brewPic.attr("src", "/assets/images/brewery-background.jpg");
             break;
@@ -167,11 +170,16 @@ function displayBreweryInfo (e) {
         case 5:
             brewPic.attr("src", "/assets/images/kitahara-santana.jpg");
              break;
+        case 6:
+            brewPic.attr("src", "/assets/images/distillery.jpg");
+            break;
+        case 7:
+            brewPic.attr("src", "/assets/images/conveyor-belt-brewery.jpg");
+            break;
         default:
             brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
     }
 }
-
 function searchFormSubmit(event) {
     event.preventDefault();
 
