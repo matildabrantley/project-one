@@ -12,11 +12,13 @@ img {
 }
 
 img:hover {
-    filter: brightness(103%) contrast(97%);
+    filter: brightness(104%) contrast(97%);
 }
 
 body {
     background-image: url("brewery-background.jpg");
+    background-size: contain;
+    background-size: cover;
 }
 
 .grid-container {
@@ -28,7 +30,7 @@ body {
       "brew-pic wiki wiki"
       "brew-info wiki wiki";
   
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0fr 1fr 1fr;
     grid-template-rows: 0.25fr 0.5fr 1fr auto;
     grid-gap: 10px;
   
@@ -44,6 +46,10 @@ header {
     color: white;
     padding-bottom: 10px;
     /* background-image: url("brewery-background.jpg"); */
+}
+
+#list-header {
+    display: none;
 }
 
 .jumbotron {
@@ -90,7 +96,7 @@ nav {
     background-size: contain;
     background-size: cover;
     background-image: url("lights.jpeg");
-    font-size:x-large;
+    font-size: x-large;
     border-radius: 20px;
     margin-top: 10px;
     box-shadow: 0px 0px 5px 1px gray;
@@ -104,16 +110,20 @@ nav {
 figure {
     grid-area: brew-pic;
     margin-left: 5%;
-    border: solid black 10px;
+    display:none;
 }
   
-section {
+#brew-info {
     grid-area: brew-info;
+    display: none;
     margin-left: 5%;
+    padding-left: 10px;
+    border: double black 10px;
 }
 
-main {
+#wiki {
     grid-area: wiki;
+    display: none;
     border-radius: 20px;
     margin-right: 5%;
     padding-left: 1%;
@@ -121,6 +131,7 @@ main {
 
 #wiki-paragraphs {
     text-align: justify;
+    font-size: 1rem;
     background-color: rgb(236, 230, 230);
     padding: 1%;
     border-radius: 10px;
