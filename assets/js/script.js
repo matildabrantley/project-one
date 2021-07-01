@@ -78,6 +78,15 @@ function displayBreweries(breweryData, region){
 
     if (!getStoredSearches().includes(region))
         addStoredSearch(region);
+
+    var detailedResults = $(document.createElement("button"));
+    detailedResults.text("Full Search Results");
+    detailedResults.on("click", function(){
+        location.assign("./search-results.html");
+        console.log(location);
+    });
+    $('#search').append(detailedResults);
+
 }
 
 function displayBreweryInfo (e) {
