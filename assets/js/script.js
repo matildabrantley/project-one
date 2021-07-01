@@ -153,31 +153,31 @@ function displayBreweryInfo (e) {
     var brewPic = $('#brew-pic').find("img");
     switch(Math.floor(Math.random()*8)){
         case 0:
-            brewPic.attr("src", "/assets/images/brewery-background.jpg");
+            brewPic.attr("src", "../assets/images/brewery-background.jpg");
             break;
         case 1:
-            brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
+            brewPic.attr("src", "../assets/images/buncha-beer.jpeg");
             break;
         case 2:
-            brewPic.attr("src", "/assets/images/beer-shelf.jpg");
+            brewPic.attr("src", "../assets/images/beer-shelf.jpg");
             break;
         case 3:
-            brewPic.attr("src", "/assets/images/stout-porter.jpeg");
+            brewPic.attr("src", "../assets/images/stout-porter.jpeg");
             break;
         case 4:
-            brewPic.attr("src", "/assets/images/cozy-pub.jpg");
+            brewPic.attr("src", "../assets/images/cozy-pub.jpg");
             break;
         case 5:
-            brewPic.attr("src", "/assets/images/kitahara-santana.jpg");
+            brewPic.attr("src", "../assets/images/kitahara-santana.jpg");
              break;
         case 6:
-            brewPic.attr("src", "/assets/images/distillery.jpg");
+            brewPic.attr("src", "../assets/images/distillery.jpg");
             break;
         case 7:
-            brewPic.attr("src", "/assets/images/conveyor-belt-brewery.jpg");
+            brewPic.attr("src", "../assets/images/conveyor-belt-brewery.jpg");
             break;
         default:
-            brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
+            brewPic.attr("src", "../assets/images/buncha-beer.jpeg");
     }
 }
 function searchFormSubmit(event) {
