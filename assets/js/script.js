@@ -151,7 +151,7 @@ function displayBreweryInfo (e) {
     //put up a different brewery picture
     $('#brew-pic').css("display", "block");
     var brewPic = $('#brew-pic').find("img");
-    switch(Math.floor(Math.random()*6)){
+    switch(Math.floor(Math.random()*8)){
         case 0:
             brewPic.attr("src", "/assets/images/brewery-background.jpg");
             break;
@@ -170,6 +170,12 @@ function displayBreweryInfo (e) {
         case 5:
             brewPic.attr("src", "/assets/images/kitahara-santana.jpg");
              break;
+        case 6:
+            brewPic.attr("src", "/assets/images/distillery.jpg");
+            break;
+        case 7:
+            brewPic.attr("src", "/assets/images/conveyor-belt-brewery.jpg");
+            break;
         default:
             brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
     }
