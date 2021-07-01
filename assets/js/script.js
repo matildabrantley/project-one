@@ -10,6 +10,11 @@ searchForm.addEventListener('submit', searchFormSubmit);
 displayStoredSearches();
 
 async function getWikiPage(page) {
+    var regionType = document.querySelector('#format-input').value;
+    //resolving state ambiguity
+    if (regionType == "state")
+        page += " (U.S. state)";
+
     $.ajax({
         type: "GET",
         url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
