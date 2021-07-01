@@ -61,7 +61,6 @@ function displayBreweries(breweryData){
         breweryTitle.css("display", "inline-block");
         $('#list-header').css("display", "block");
         $('#wiki').css("display", "block");
-        $('.grid-container').css("grid-template-columns", "0fr 1fr 1fr");
         breweryTitle.on("click", 
             {brewPhone: breweryData[i].phone, brewWebsite: breweryData[i].website_url, brewStreet: breweryData[i].street,
                 brewType: breweryData[i].brewery_type, brewState: breweryData[i].state, brewCity: breweryData[i].city}, 

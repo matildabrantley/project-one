@@ -30,7 +30,7 @@ body {
       "brew-pic wiki wiki"
       "brew-info wiki wiki";
   
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0fr 1fr 1fr;
     grid-template-rows: 0.25fr 0.5fr 1fr auto;
     grid-gap: 10px;
   
