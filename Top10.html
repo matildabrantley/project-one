@@ -10,7 +10,7 @@
 
 
 <head>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
         <button
             class="navbar-toggler"
@@ -38,7 +38,7 @@
         </div>
         </div>
     </nav>
-    <div class="p-5 text-center bg-light">
+    <div class="p-5 text-center">
         <h1 class="mb-3">Top 9 Breweries</h1>
         <h4 class="mb-3">2021</h4>
     </div>
@@ -48,21 +48,22 @@
 
 
 <body>
-<div class="row row-cols-1 row-cols-md-3 g-10">
-  <div class="col">
-    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
+<div class="row row-cols-1 row-cols-md-3 g-10 justify-content-center">
+  <div class="col ">
+    <div class="card text-center justify-content-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://www.porchdrinking.com/wp-content/uploads/2015/09/image1-1-640x325.jpeg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
-      <div class="card-body">
+      <div class="card-body justify-content-center" >
         <h5 class="card-title font-weight-bold mb-2">Hill Farmstead Brewery</h5>
         <p class="card-text">
           Based on the farm that has been home to his family for over 230 years, Hill Farmstead's mission statement is “to hand craft succinct, elegant beers of distinction and to revive and diversify the farmscape of the Hill Farmstead in Greensboro”.
         </p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2840.528529083241!2d-72.26559798447111!3d44.606667679100106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb5cee910e16d85%3A0xf2264cf9c9b3dd65!2sHill%20Farmstead%20Brewery!5e0!3m2!1sen!2sus!4v1625149567695!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Hill-Farmstead-Brewery-Phone" class="btn btn-danger">Phone</button>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2840.528529083241!2d-72.26559798447111!3d44.606667679100106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb5cee910e16d85%3A0xf2264cf9c9b3dd65!2sHill%20Farmstead%20Brewery!5e0!3m2!1sen!2sus!4v1625149567695!5m2!1sen!2sus" width="400" height="300" style="border:2px;" allowfullscreen="" loading="lazy"></iframe>
+        <button class="btn btn-danger popup" onclick="myFunction()">Phone
+          <span class="popuptext" id="myPopup1">(802) 533-7450</span>
         <button onclick="website1()" class="btn btn-primary">Website</button>
         <button onclick="map1()" class="btn btn-success">Direction</button>      
       </div>
@@ -73,14 +74,15 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://media2.fdncms.com/riverfronttimes/imager/u/original/33114470/sideproject-brewery_resized.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
         <h5 class="card-title font-weight-bold mb-2">Side Project Brewing</h5>
         <p class="card-text">Side Project Brewing was founded by Cory and Karen King in St. Louis Missouri. Side Project focuses on producing only barrel-aged beers with an emphasis on Saisons, Wild Ales, and spirit barrel-aged beers.</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.5971440229005!2d-90.3239948843899!3d38.61214167131253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8caf595541c71%3A0xa572d6358cca16a8!2sSide%20Project%20Brewing!5e0!3m2!1sen!2sus!4v1625149879616!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Side-Project-Brewing-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction1()">Phone
+          <span class="popuptext" id="myPopup2">314-224-5211</span>
         <button onclick="website2()" class="btn btn-primary">Website</button>
         <button onclick="map2()" class="btn btn-success">Direction</button>
       </div>
@@ -91,7 +93,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://media.timeout.com/images/105504785/630/472/image.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -100,7 +102,8 @@
           "The desire to build a brewery was about more than just making beer, it was about creating a way of life and building a community with which to share experiences."
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94463.60620094629!2d-71.15496653090771!3d42.27878605410971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a803cc64d71%3A0x84333022c52876d!2sTrillium%20Brewing%20Company!5e0!3m2!1sen!2sus!4v1625149918527!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Trillium-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction3()">Phone
+          <span class="popuptext" id="myPopup3">(857) 449-0083</span>
         <button onclick="website3()" class="btn btn-primary">Website</button>
         <button onclick="map3()" class="btn btn-success">Direction</button>
       </div>
@@ -111,7 +114,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2019/06/Tree-House-outdoors-social.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -120,7 +123,8 @@
           The rustic retail shop of this small, artisan brewery has rotating craft beers & limited hours.
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.639737742825!2d-72.01452518431238!3d42.136595157176366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6be8701e9a0c5%3A0x7ffa9a29a8606352!2sTree%20House%20Brewing%20Company!5e0!3m2!1sen!2sus!4v1625150194492!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Tree-House-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction4()">Phone
+          <span class="popuptext" id="myPopup4">(413) 523-2367</span>
         <button onclick="website4()" class="btn btn-primary">Website</button>
         <button onclick="map4()" class="btn btn-success">Direction</button>
       </div>
@@ -131,7 +135,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://www.cigarcitybrewing.com/wp-content/uploads/2020/01/ccb-airport-28-scaled.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -140,7 +144,8 @@
           Cigar City Brewing, LLC is a craft brewery in Tampa, Florida, at 3924 West Spruce Street. Founded in 2007 by Joey Redner, it has been producing beer in Tampa since January 30, 2009. It currently produces approximately 170,000 barrels of beer annually. Since 2009, it has brewed over 6,000 individual brands of beer.
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14143051.941671396!2d-108.86786282036535!3d30.068585925110444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c23905f3b78b%3A0x66bc6a7b69581ab!2sCigar%20City%20Brewing!5e0!3m2!1sen!2sus!4v1625150155926!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Cigar-City-Brewing-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction5()">Phone
+          <span class="popuptext" id="myPopup5">(813) 348-6363</span>
         <button onclick="website5()" class="btn btn-primary">Website</button>
         <button onclick="map5()" class="btn btn-success">Direction</button>
       </div>
@@ -151,7 +156,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://passporttosandiego.com/wp-content/uploads/2017/10/AleSmith_Brewing_lounge-Room8.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -159,7 +164,8 @@
         <p class="card-text">
           Artisanal microbrewery with a rotating draft menu, tasting room & free tours of the facilities.</p>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.376908491698!2d-117.15203868450087!3d32.88820168561452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbf8c94bbebb75%3A0x6b638fcda2060498!2sAleSmith%20Brewing%20Company!5e0!3m2!1sen!2sus!4v1625150116267!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          <button id="AleSmith-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+          <button class="btn btn-danger popup" onclick="myFunction6()">Phone
+            <span class="popuptext" id="myPopup6">(858) 549-9888</span>
           <button onclick="website6()" class="btn btn-primary">Website</button>
           <button onclick="map16()" class="btn btn-success">Direction</button>
       </div>
@@ -170,7 +176,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://mibiz.com/media/k2/items/cache/d240a13004f765322f7150f5a9898c16_XL.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -179,7 +185,8 @@
           Overlooking the brewing facilities, this hangout with high ceilings serves craft beer & sandwiches.
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.9398670998044!2d-85.67600848429339!3d42.95847160509198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8819adc2b859d2d7%3A0x3787a6a56fc0c0ce!2sFounders%20Brewing%20Co!5e0!3m2!1sen!2sus!4v1625150086963!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Founders-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction7()">Phone
+          <span class="popuptext" id="myPopup7">(616) 776-1195</span>
         <button onclick="website7()" class="btn btn-primary">Website</button>
         <button onclick="map7()" class="btn btn-success">Direction</button>
       </div>
@@ -190,7 +197,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://p2d7x8x2.stackpathcdn.com/content/uploads/2016/08/9-dipa-v3-cloudwater-640x480.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -199,7 +206,8 @@
           Cloudwater Brew Co is an independent craft brewery based in Manchester, England. Established in 2014, the brewery began making beer the following year and quickly gained a reputation for the quality of its products
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.4703679940335!2d-2.2243996841566003!3d53.47792498000685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb19881aaeff3%3A0xaaf8e40de7c50230!2sCloudwater%20Brew%20Co!5e0!3m2!1sen!2sus!4v1625150054070!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Cloudwater-Brew-Co-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction8()">Phone
+          <span class="popuptext" id="myPopup8">+44 161 661 5943</span>
         <button onclick="website8()" class="btn btn-primary">Website</button>
         <button onclick="map8()" class="btn btn-success">Direction</button>
       </div>
@@ -210,7 +218,7 @@
     <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
       src="https://s3-us-west-1.amazonaws.com/assets.sanatcruzwaves.com/wp-content/uploads/2018/05/Private-Party1.jpg"
-      class="img-fluid rounded"
+      class="img-fluid rounded justify-content-center align-self-center"
         alt="..."
       />
       <div class="card-body">
@@ -219,10 +227,11 @@
           Snug brewery featuring old-world-style ales with a twist & a comfy tasting room with a relaxed vibe.
         </p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.1095342695317!2d-121.95176608442323!3d36.98331856506932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e157784d6c595%3A0x641ad47ecfc90f5e!2sSante%20Adairius%20Rustic%20Ales!5e0!3m2!1sen!2sus!4v1625150009351!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        <button id="Sante-Adairius-Rustic-Ales-Phone" class="btn btn-danger">Phone</button>
+        <button class="btn btn-danger popup" onclick="myFunction9()">Phone
+          <span class="popuptext" id="myPopup9">(831) 462-1227</span>
         <button onclick="website9()" class="btn btn-primary">Website</button>
         <button onclick="map9()" class="btn btn-success">Direction</button>
-      </div>
+      </button>
     </div>
   </div>
 
