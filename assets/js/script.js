@@ -11,9 +11,9 @@ displayStoredSearches();
 
 async function getWikiPage(page) {
     var regionType = document.querySelector('#format-input').value;
-    //resolving state ambiguity
-    if (regionType == "state")
-        page += " (U.S. state)";
+    //resolving as many ambiguities as possible
+    page = resolveWikiAmbiguity(page);
+    console.log(page);
 
     $.ajax({
         type: "GET",
@@ -22,21 +22,32 @@ async function getWikiPage(page) {
         async: true,
         dataType: "json",
         success: function (data) {
+            console.log("Wiki results");
+            console.log(data);
             var wikiContainer = data.parse.text["*"];
             var pageSection = $('<div></div>').html(wikiContainer);
             wikiImages.html($(pageSection).find('img').eq(0));
-            wikiParagraphs.html($(pageSection).find('p').slice(0,3));
+            wikiParagraphs.html($(pageSection).find('p').slice(0,4));
         },
         error: function (error) {}
     });
 };
 
-//getWikiPage("Atlanta");
-
 async function getBreweryData(region) {
     var regionType = document.querySelector('#format-input').value;
     if (regionType != "state" && regionType != "city")
         regionType = "city";
+
+    //split up string by ","
+    var regionSubstrings = region.split(",");
+    console.log(regionSubstrings);
+    //if the resulting substring array is longer than 0, assume user is specifying the state the city's in
+    if (regionSubstrings.length > 1) {
+        region = regionSubstrings[0]; //discard the state for OpenBrewery DB
+        regionType = "city";
+        document.querySelector('#format-input').value = "city";
+        console.log(region);
+    }
 
     var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
     //return fetch Promise of region's brewery data
@@ -46,8 +57,8 @@ async function getBreweryData(region) {
         return response.json();
     })
     .then(function (breweryData) {
-        console.log("Region results");
-        console.log(breweryData);
+        // console.log("Region results");
+        // console.log(breweryData);
 
        displayBreweries(breweryData, region)
         return breweryData;
@@ -59,7 +70,7 @@ function displayBreweries(breweryData, region){
     breweryList.empty();
     for (var i = 0; i < breweryData.length; i++){
         var breweryTitle = $(document.createElement("a"));
-        breweryTitle.attr("href", "#brew-info");
+        breweryTitle.attr("href", "#brew-pic");
         breweryTitle.attr("name", breweryData[i].name);
         breweryTitle.brewPhone = breweryData[i].phone;
         breweryTitle.brewWebsite = breweryData[i].website_url;
@@ -89,6 +100,9 @@ function displayBreweries(breweryData, region){
         });
         $('#full-results').append(detailedResults);
     }
+
+    
+    $('.grid-container').css("grid-template-columns", "0fr 1fr 1fr");
 
 }
 
@@ -153,43 +167,33 @@ function displayBreweryInfo (e) {
     var brewPic = $('#brew-pic').find("img");
     switch(Math.floor(Math.random()*8)){
         case 0:
-            brewPic.attr("src", "../assets/images/brewery-background.jpg");
+            brewPic.attr("src", "/project-one/assets/images/brewery-background.jpg");
             break;
         case 1:
-            brewPic.attr("src", "../assets/images/buncha-beer.jpeg");
+            brewPic.attr("src", "/project-one/assets/images/buncha-beer.jpeg");
             break;
         case 2:
-            brewPic.attr("src", "../assets/images/beer-shelf.jpg");
+            brewPic.attr("src", "/project-one/assets/images/beer-shelf.jpg");
             break;
         case 3:
-            brewPic.attr("src", "../assets/images/stout-porter.jpeg");
+            brewPic.attr("src", "/project-one/assets/images/stout-porter.jpeg");
             break;
         case 4:
-            brewPic.attr("src", "../assets/images/cozy-pub.jpg");
+            brewPic.attr("src", "/project-one/assets/images/cozy-pub.jpg");
             break;
         case 5:
-            brewPic.attr("src", "../assets/images/kitahara-santana.jpg");
+            brewPic.attr("src", "/project-one/assets/images/kitahara-santana.jpg");
              break;
         case 6:
-            brewPic.attr("src", "../assets/images/distillery.jpg");
+            brewPic.attr("src", "/project-one/assets/images/distillery.jpg");
             break;
         case 7:
-            brewPic.attr("src", "../assets/images/conveyor-belt-brewery.jpg");
+            brewPic.attr("src", "/project-one/assets/images/conveyor-belt-brewery.jpg");
             break;
         default:
-            brewPic.attr("src", "../assets/images/buncha-beer.jpeg");
+            brewPic.attr("src", "/project-one/assets/images/buncha-beer.jpeg");
     }
 }
-function searchFormSubmit(event) {
-    event.preventDefault();
-
-    var searchRegion = document.querySelector('#search-input').value;
-
-    getBreweryData(searchRegion);
-    getWikiPage(searchRegion);
-  }
-
-function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}
 
   //retrieve localStorage storedSearches array and push to it, then append button
 function addStoredSearch(search){
@@ -219,16 +223,66 @@ function getStoredSearches() {
 //displays searches from previous page visits in localStorage
 function displayStoredSearches() {
     var storedSearchesArray = getStoredSearches();
-    console.log(storedSearchesArray);
     for (i in storedSearchesArray){
-        console.log(storedSearchesArray[i]);
         var storedSearch = $(document.createElement("button"));
         storedSearch.text(storedSearchesArray[i]);
         storedSearch.addClass('btn btn-info btn-block history-button');
         storedSearch.on('click', function(){
+            document.querySelector('#search-input').value = this.innerHTML;
             getBreweryData(this.innerHTML);
             getWikiPage(this.innerHTML);
         });
         $('#search').append(storedSearch);
     }
 }
+
+function searchFormSubmit(event) {
+    event.preventDefault();
+
+    var searchRegion = document.querySelector('#search-input').value;
+    getBreweryData(searchRegion);
+    getWikiPage(searchRegion);
+}
+
+function resolveWikiAmbiguity(page) {
+    page = capitalize(page);
+    
+    //state ambiguities
+    if (page == "Georgia")
+        page += " (U.S. state)";
+    if (page == "Washington")
+        page += " (state)";
+    if (page == "New York State")
+        page = "New York (state)";
+
+    //major city ambiguities
+    if (page == "New York")
+        if (document.querySelector('#format-input').value == "state") {
+            page += " (state)";
+        } else //defaults to NY City if state isn't specified
+            page += " City"
+    if (page == "San Jose" || page == "Sacramento" || page == "Fresno")
+        page += ", California";
+    if (page == "Memphis" || page == "Chattanooga")
+        page += ", Tennessee";
+    if (page == "Portland" || page == "Salem")
+        page += ", Oregon";
+    if (page == "El Paso" || page == "Fort Worth")
+        page += ", Texas";
+    if (page == "Louisville" || page == "Lexington")
+        page += ", Kentucky";
+    if (page == "Albuquerque" || page == "Santa Fe")
+        page += ", New Mexico";
+    if (page == "Tuscon" || page == "Phoenix")
+        page += ", Arizona";
+    if (page == "Tulsa")
+        page += ", Oklahoma";
+    if (page == "Charlotte" || page == "Raleigh")
+        page += ", North Carolina";
+    if (page == "Tampa" || page == "Orlando" || page == "Jacksonville")
+        page += ", Florida";
+
+    return page;
+}
+
+function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}
