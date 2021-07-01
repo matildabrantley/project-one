@@ -63,24 +63,10 @@ main {
     border-radius: 2px;
 }
 
-#searchResults {
-    position:absolute; 
-    top:100%; 
-    background-color: white; 
-    border: 1px solid black; 
-    z-index: 50;
+#brew-info {
+    grid-area: brew-info;
     display: none;
-  }
-  
-  .inputRow {
-    position:relative;
-    overflow:auto;
-  }
-  
-  input {
-    width: 98%;
-  }
-  
-  div {
-    z-index: 0;
-  }
+    margin-left: 5%;
+    padding-left: 10px;
+    border: double black 10px;
+}
