@@ -1,3 +1,6 @@
+body {
+    background-color: '#1a1a1a', color: '#d9e9e8'
+}
 .grid-container {
     display: grid;
   
@@ -60,4 +63,13 @@ main {
     border: 2px solid #333;
     width: 80vw;
     height: 80vh;
+}
+
+iframe {
+    border: 3px solid brown;
+    width: 100%;
+}
+
+.output {
+    background: #eee;
 }
