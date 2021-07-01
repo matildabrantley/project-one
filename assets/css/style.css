@@ -16,7 +16,7 @@ img:hover {
 }
 
 body {
-    background-image: url("brewery-background.jpg");
+    background-image: url("/assets/images/brewery-background.jpg");
     background-size: contain;
     background-size: cover;
 }
@@ -45,7 +45,6 @@ header {
     text-align: center;
     color: white;
     padding-bottom: 10px;
-    /* background-image: url("brewery-background.jpg"); */
 }
 
 #list-header {
@@ -95,7 +94,7 @@ nav {
 #search-button {
     background-size: contain;
     background-size: cover;
-    background-image: url("lights.jpeg");
+    background-image: url("/assets/images/lights.jpeg");
     font-size: x-large;
     border-radius: 20px;
     margin-top: 10px;
@@ -144,4 +143,13 @@ figure {
     min-height: 150px;
     max-width: 100%;
     border-top-right-radius: 10px;
+}
+
+.history-button {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    margin: 5px;
+    max-width: 10vw;
+    font-size: 1vw;
 }
