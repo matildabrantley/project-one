@@ -39,4 +39,34 @@ Button1.on('click', function () {
   Button10.on('click', function () {
     alert('Phone Number: (805) 591-8020');
   });
-
+  
+  function website1() {
+    window.open("https://hillfarmstead.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website2() {
+    window.open("https://www.sideprojectbrewing.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website3() {
+    window.open("https://www.trilliumbrewing.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website4() {
+    window.open("https://treehousebrew.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website5() {
+    window.open("https://www.cigarcitybrewing.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website6() {
+    window.open("https://alesmith.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website7() {
+    window.open("https://foundersbrewing.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website8() {
+    window.open("https://cloudwaterbrew.co/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website9() {
+    window.open("https://rusticales.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
+  function website10() {
+    window.open("https://www.firestonebeer.com/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=100,left=500,width=800,height=800");
+  }
