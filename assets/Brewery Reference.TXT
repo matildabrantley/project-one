@@ -1,0 +1,14 @@
+The 10 Best Breweries, According to RateBeer Users:
+
+List to use to find ID from openBrewery API
+
+Hill Farmstead Brewery (Greensboro, Vermont)
+Side Project Brewing (Maplewood, Missouri)
+Trillium Brewing Company (Boston, Massachusetts)
+Tree House Brewing Company (Charlton, Massachusetts)
+Cigar City Brewing (owned by CANarchy Craft Brewery Collective) (Tampa, Florida)
+AleSmith Brewing Company (San Diego, California)
+Founders Brewing Company (owned by Mahou San Miguel) (Grand Rapids, Michigan)
+Cloudwater Brew Co (Manchester, Greater Manchester, England)
+Sante Adairius Rustic Ales (Capitola, California)
+Firestone Walker Brewing (owned by Duvel-Moortgat) (Paso Robles, California) 

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/Top10.css">
     <title>Brewery Guide</title>
+
+
 <head>
     <nav class="navbar navbar-expand-lg navbar-light bg-white ">
         <div class="container-fluid">
@@ -13,14 +16,14 @@
             class="navbar-toggler"
             type="button"
             data-mdb-toggle="collapse"
-            data-mdb-target="#navbarExample01"
-            aria-controls="navbarExample01"
-            aria-expanded="false"
+            data-mdb-target="Home"
+            aria-controls="home"
+            aria-expanded="true"
             aria-label="Toggle navigation"
         >
             <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" style="background-color: rgb(0, 0, 0);color: white;">
+        <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" aria-current="page" href="#">Home</a>
@@ -41,162 +44,205 @@
     </div>
 </head>
 
+
+
+
 <body>
 <div class="row row-cols-1 row-cols-md-3 g-10">
   <div class="col">
-    <div class="card h-100 ">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://www.porchdrinking.com/wp-content/uploads/2015/09/image1-1-640x325.jpeg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Hill Farmstead Brewery</h5>
         <p class="card-text">
-          Description of Brewery
+          Based on the farm that has been home to his family for over 230 years, Hill Farmstead's mission statement is “to hand craft succinct, elegant beers of distinction and to revive and diversify the farmscape of the Hill Farmstead in Greensboro”.
         </p>
+        <button id="Hill-Farmstead-Brewery-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://hillfarmstead.com/" class="btn btn-primary">Website</a>
+        <button id=map1 class="btn btn-success">Direction</button>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://media2.fdncms.com/riverfronttimes/imager/u/original/33114470/sideproject-brewery_resized.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
-        <p class="card-text">Description of Brewery</p>
+        <h5 class="card-title font-weight-bold mb-2">Side Project Brewing</h5>
+        <p class="card-text">Side Project Brewing was founded by Cory and Karen King in St. Louis Missouri. Side Project focuses on producing only barrel-aged beers with an emphasis on Saisons, Wild Ales, and spirit barrel-aged beers.</p>
+        <button id="Side-Project-Brewing-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://www.sideprojectbrewing.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://media.timeout.com/images/105504785/630/472/image.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Trillium Brewing Company</h5>
         <p class="card-text">
-            Description of Brewery
+          "The desire to build a brewery was about more than just making beer, it was about creating a way of life and building a community with which to share experiences."
         </p>
+        <button id="Trillium-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://www.trilliumbrewing.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2019/06/Tree-House-outdoors-social.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Tree House Brewing Company</h5>
         <p class="card-text">
-            Description of Brewery
+          The rustic retail shop of this small, artisan brewery has rotating craft beers & limited hours.
         </p>
+        <button id="Tree-House-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://treehousebrew.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://www.cigarcitybrewing.com/wp-content/uploads/2020/01/ccb-airport-28-scaled.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Cigar City Brewing</h5>
         <p class="card-text">
-            Description of Brewery
+          Cigar City Brewing, LLC is a craft brewery in Tampa, Florida, at 3924 West Spruce Street. Founded in 2007 by Joey Redner, it has been producing beer in Tampa since January 30, 2009. It currently produces approximately 170,000 barrels of beer annually. Since 2009, it has brewed over 6,000 individual brands of beer.
         </p>
+        <button id="Cigar-City-Brewing-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://www.cigarcitybrewing.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://passporttosandiego.com/wp-content/uploads/2017/10/AleSmith_Brewing_lounge-Room8.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">AleSmith Brewing Company</h5>
         <p class="card-text">
-            Description of Brewery
-        </p>
+          Artisanal microbrewery with a rotating draft menu, tasting room & free tours of the facilities.</p>
+          <button id="AleSmith-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+          <a href="https://alesmith.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://mibiz.com/media/k2/items/cache/d240a13004f765322f7150f5a9898c16_XL.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Founders Brewing Company</h5>
         <p class="card-text">
-            Description of Brewery
+          Overlooking the brewing facilities, this hangout with high ceilings serves craft beer & sandwiches.
         </p>
+        <button id="Founders-Brewing-Company-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://foundersbrewing.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://p2d7x8x2.stackpathcdn.com/content/uploads/2016/08/9-dipa-v3-cloudwater-640x480.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Cloudwater Brew Co</h5>
         <p class="card-text">
-            Description of Brewery
+          Cloudwater Brew Co is an independent craft brewery based in Manchester, England. Established in 2014, the brewery began making beer the following year and quickly gained a reputation for the quality of its products
         </p>
+        <button id="Cloudwater-Brew-Co-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://cloudwaterbrew.co/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://s3-us-west-1.amazonaws.com/assets.sanatcruzwaves.com/wp-content/uploads/2018/05/Private-Party1.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Sante Adairius Rustic Ales</h5>
         <p class="card-text">
-            Description of Brewery
+          Snug brewery featuring old-world-style ales with a twist & a comfy tasting room with a relaxed vibe.
         </p>
+        <button id="Sante-Adairius-Rustic-Ales-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://rusticales.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
+
   <div class="col">
-    <div class="card h-100">
+    <div class="card text-center h-100 text-white bg-dark m-4 border-0" style="width: 30rem;">
       <img
-      src="https://illianabrewbus.com/wp-content/uploads/2018/03/breweries.jpg"
-      class="img-fluid rounded-pill"
+      src="https://www.firestonebeer.com/wp-content/uploads/2020/05/Venice_header_desktop-6.jpg"
+      class="img-fluid rounded"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title font-weight-bold mb-2">Name of Brewery</h5>
+        <h5 class="card-title font-weight-bold mb-2">Firestone Walker Brewing</h5>
         <p class="card-text">
-            Description of Brewery
+          Firestone Walker Brewing Company is a brewery in Paso Robles, Central Coast California, and Buellton, California. Firestone Walker is California's fourth-largest craft brewery and is known for producing hoppy ales. Firestone Walker was the sixteenth largest craft brewery in the U.S. in beer sales volume in 2014
         </p>
+        <button id="Firestone-Walker-Brewing-Phone" class="btn btn-danger">Phone</button>
+        <a href="https://www.firestonebeer.com/" class="btn btn-primary">Website</a>
+        <a href="#" class="btn btn-success">Direction</a>
       </div>
     </div>
   </div>
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcrN86othJYNBDO6lj3NwdlZb3MzEZATA&callback=myMap"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/Phone.js"></script>
 </html>
 
 

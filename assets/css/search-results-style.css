@@ -23,7 +23,7 @@ img {
 }
 
 body {
-    background-image: url("buncha-beer.jpeg");
+    background-image: url("/assets/images/buncha-beer.jpeg");
     background-size: contain;
     background-size: cover;
 }
@@ -46,7 +46,6 @@ section {
 main {
     border-radius: 5px;
 }
-
 
 #search-input {
     color: black;
