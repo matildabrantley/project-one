@@ -52,7 +52,7 @@ function displayBreweries(breweryData){
     breweryList.empty();
     for (var i = 0; i < breweryData.length; i++){
         var breweryTitle = $(document.createElement("a"));
-        breweryTitle.attr("href", "#search");
+        breweryTitle.attr("href", "#brew-info");
         breweryTitle.attr("name", breweryData[i].name);
         breweryTitle.brewPhone = breweryData[i].phone;
         breweryTitle.brewWebsite = breweryData[i].website_url;
@@ -76,10 +76,10 @@ function displayBreweryInfo (e) {
     //clear anything in info box
     brewInfo.empty();
     $('.grid-container').css("grid-template-columns", "1fr 1fr 1fr");
-    $('#brew-pic').css("display", "block");
     brewInfo.css("background-color", "rgba(0,0,0,.60)");
+    brewInfo.css("display", "block");
 
-    //create & display title
+    //create & display name
     var breweryName = $("<h4>" + this.name + "</h4>");
     breweryName.css("color", "white");
     brewInfo.append(breweryName);
@@ -125,6 +125,32 @@ function displayBreweryInfo (e) {
         breweryWebsite.attr("href", e.data.brewWebsite);
         breweryWebsite.css("color", "cyan");
         brewInfo.append(breweryWebsite);
+    }
+
+    //put up a different brewery picture
+    $('#brew-pic').css("display", "block");
+    var brewPic = $('#brew-pic').find("img");
+    switch(Math.floor(Math.random()*6)){
+        case 0:
+            brewPic.attr("src", "/assets/images/brewery-background.jpg");
+            break;
+        case 1:
+            brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
+            break;
+        case 2:
+            brewPic.attr("src", "https://images.unsplash.com/photo-1603989872391-359eb0b42a58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+            break;
+        case 3:
+            brewPic.attr("src", "/assets/images/stout-porter.jpeg");
+            break;
+        case 4:
+            brewPic.attr("src", "/assets/images/cozy-pub.jpg");
+            break;
+        case 5:
+            brewPic.attr("src", "/assets/images/kitahara-santana.jpg");
+             break;
+        default:
+            brewPic.attr("src", "/assets/images/buncha-beer.jpeg");
     }
 }
 

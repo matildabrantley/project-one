@@ -27,8 +27,8 @@ body {
     grid-template-areas:
       "header header header"
       "search search search"
-      "brew-info wiki wiki"
-      "brew-pic wiki wiki";
+      "brew-pic wiki wiki"
+      "brew-info wiki wiki";
   
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.25fr 0.5fr 1fr auto;
@@ -113,16 +113,17 @@ figure {
     display:none;
 }
   
-section {
+#brew-info {
     grid-area: brew-info;
+    display: none;
     margin-left: 5%;
-    border-radius: 10px;
     padding-left: 10px;
+    border: double black 10px;
 }
 
 #wiki {
-    display: none;
     grid-area: wiki;
+    display: none;
     border-radius: 20px;
     margin-right: 5%;
     padding-left: 1%;
