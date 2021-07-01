@@ -17,7 +17,7 @@ This project will allow users to search for Breweries based on cities and states
 As an avid drinker that likes to travel, I want to know which breweries are in the areas I am traveling too
 ```
 ## Wireframe or sketch of the design:
-![Wireframe](assets\components\wireframe.png)
+![Wireframe](assets/components/wireframe.png)
 ## APIs to be used:
 ```
 OpenBreweries and Wikipedia

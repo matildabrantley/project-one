@@ -16,7 +16,7 @@ img:hover {
 }
 
 body {
-    background-image: url("/assets/images/brewery-background.jpg");
+    background-image: url("../images/brewery-background.jpg");
     background-size: contain;
     background-size: cover;
 }
@@ -58,7 +58,6 @@ header {
 header a {
     margin-left: 5px;
     margin-right: 5px;
-    border: solid rgb(75, 63, 63) 1px;
     border-radius: 3px;
     color: yellow;
 }
@@ -94,7 +93,7 @@ nav {
 #search-button {
     background-size: contain;
     background-size: cover;
-    background-image: url("/assets/images/lights.jpeg");
+    background-image: url("../images/lights.jpeg");
     font-size: x-large;
     border-radius: 20px;
     margin-top: 10px;
