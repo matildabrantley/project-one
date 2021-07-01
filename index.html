@@ -6,32 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Project One</title>
+    <title>Brewery Database Search</title>
 </head>
 <body>
 
     <div class="grid-container">
         <header>
-            <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color: rgb(0, 0, 0);color: white;">
-                <h1> <strong>BrewHaHa</strong></h1>
-            </div>
-            <div id="top-ten">
-                <span style="font-size: 1.3rem">Top Ten Breweries:</span>
-                <span>Brewery One</span>
-                <span>Brewery Two</span>
-                <span>Brewery Three</span>
-                <span>Brewery Four</span>
-                <span>Brewery Five</span>
-                <span>Brewery ...</span>
+            <h1> <strong><span>Brew</span>HaHa</strong></h1>
+            <h3 id="list-header" style="font-size: 1.3rem">Breweries in Area:</h3>
+            <div id="brewery-list" style="display: inline-block">
             </div>
         </header>
 
         <nav id="search">
             <div class="container">
                 <div class="row">
-                    <div class="col align-self-center">
-                        Search Breweries
+                    <div class="col align-self-center" style="color: white">
+                        Search for Breweries within a Region!
                     </div>
                 </div>
             </div>
@@ -41,30 +37,28 @@
                     <form id="search-form" class="form w-100">
                         <input id="search-input" class="form-input w-100" type="text" placeholder="Search Breweries">
                         <select id="format-input" class="form-input w-100">
-                            <option value="" disabled selected>Select to search by city or state</option>
+                            <option value="" disabled selected>Specify city or state (city is default)</option>
                             <option value="city">City</option>
                             <option value="state">State</option>
                         </select>
-                        <button class="btn btn-info btn-block">Search</button>
+                        <button id="search-button" class="btn btn-info btn-block">Search Area</button>
                     </form>
                 </div>
             </div>
         </nav>
 
-        <figure>
+        <figure id="brew-pic">
             <img src="https://images.unsplash.com/photo-1603989872391-359eb0b42a58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
             class="img-fluid rounded-pill"
             alt="..."/>
         </figure>
 
-        <section>
-            Brewery Contact<br>
-            Brewery Website
+        <section id="brew-info">
         </section>
 
         <main id="wiki">
-            <article id="wiki-paragraphs"></article>
             <section id="wiki-images"></section>
+            <article id="wiki-paragraphs"></article>
         </main>
     </div>
    
