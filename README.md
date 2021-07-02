@@ -26,10 +26,11 @@ OpenBreweries and Wikipedia
 ```
 ## Rough breakdown of tasks:
 ```
-Matilda: Javascript/jQuery for API Calls
-Andrew: Use Javascript/JQuery to use split items up on the page
-Rahkeem:  
-Eagle and Sergio: CSS stuff
+*Matilda: Javascript/jQuery, API calls, designing layout
+*Andrew: Detailed search results, API calls
+*Eagle: CSS, Top 9 page, wire frame, README
+*Sergio: CSS, debugging code, functionality
+*Rakheem: Presentation, GitHub requests
 ```
 ## Features:
 * Fetch nation-wide brewery information with OpenBrreweryDB API, searching by city or state.
