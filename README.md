@@ -1,5 +1,7 @@
 # Project One: Travel Brewery
 
+[Live GitHub Page](https://matildabrantley.github.io/project-one/)
+
 ![banner](assets\components\breweryReadme.gif)
 
 ## CheckList:  
@@ -29,6 +31,12 @@ Andrew: Use Javascript/JQuery to use split items up on the page
 Rahkeem:  
 Eagle and Sergio: CSS stuff
 ```
+## Features:
+* Fetch nation-wide brewery information with OpenBrreweryDB API, searching by city or state.
+* Retireve, parse, format Wikipedia pages with ajax call to MediaWiki API. Queries formatted to avoid article ambiguity.
+* Search history held with localStorage.
+* Search information passed to search-html via localStorage.
+* Page for Top 9 Breweries in entire country with Google Maps built in.
+* Page for full detailed search results, with alternating styles.
+* Responsiveness throughout the entire website. Focus indicators for many elements.
 
-
- 
