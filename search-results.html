@@ -14,24 +14,28 @@
 </head>
 
 <body>
-    <main id="wrapper">
-      <div id="search" class="flex-row allign-start allign-stretch-md allign-content align-content-stretch-md min-20-vh">
-          <div class="col-12 col-md-13 bg-dark p-3">
-            <h1> <strong><span>Brew</span>HaHa</strong></h1>
-              <form id="search-form" class="mb-2">
-                  <input id="search-input" class="form-input w-100">
-                  <select id="format-input" class="form-input w-100">
-                      <option value="" disabled selected>Search by city or state</option>
-                      <option value="city">City</option>
-                      <option value="state">State</option>
-                  </select>
-                  <button class="btn btn-info btn-block">Search</button>
-              </form>
-              <a href="./index.html" class="btn btn-block btn-danger">&larr; Go back.</a>
-          </div>
-      </div>
-  </main>
+  <div id="search" class="flex-row allign-start allign-stretch-md allign-content align-content-stretch-md min-20-vh">
+    <div class="col-12 col-md-13 bg-dark p-3">
+      <h1> <strong><span>Brew</span>HaHa</strong></h1>
+        <form id="search-form" class="mb-2">
+            <input id="search-input" class="form-input w-100">
+            <select id="format-input" class="form-input w-100">
+                <option value="" disabled selected>Search by city or state</option>
+                <option value="city">City</option>
+                <option value="state">State</option>
+            </select>
+            <button class="btn btn-info btn-block">Search</button>
+        </form>
+        <a href="./index.html" class="btn btn-block btn-danger">&larr; Go back.</a>
+    </div>
+</div>
 
+<div id="brewery-list" style="display: block"></div>
+
+<section id="info-section">
+</section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/display-search.js"></script>
 
 </body>

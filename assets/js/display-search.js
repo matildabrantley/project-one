@@ -1,70 +1,96 @@
-var resultText = document.querySelector('#result-text');
-var resultContent = document.querySelector('#result-content');
 var searchForm = document.querySelector('#search-form');
+var breweryList = $('#brewery-list');
+var breweryArray = [];
 
 searchForm.addEventListener('submit', searchFormSubmit);
 
+getBreweryData(localStorage["indexSearchRegion"]);
 
+async function getBreweryData(region) {
+  var regionType = document.querySelector('#format-input').value;
+  if (regionType != "state" && regionType != "city")
+      regionType = "city";
 
-  async function getBreweryData(region, regionType) {
-    var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
-    //return fetch Promise of region's brewery data
-    return fetch(url)
-    .then(function (response) {
-        console.log(response);
-        return response.json();
-    })
-    .then(function (data) {
-        console.log("Region results");
-        console.log(data);
+  //split up string by ","
+  var regionSubstrings = region.split(",");
+  //if the resulting substring array is longer than 0, assume user is specifying the state the city's in
+  if (regionSubstrings.length > 1) {
+      region = regionSubstrings[0]; //discard the state for OpenBrewery DB
+      regionType = "city";
+      document.querySelector('#format-input').value = "city";
+      console.log(region);
+  }
 
-        printResults(data);
-
-        return data;
-    });
+  var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
+  //return fetch Promise of region's brewery data
+  return fetch(url)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (breweryData) {
+      displayBreweries(breweryData, region)
+      return breweryData;
+  });
 };
 
-function searchFormSubmit(event) {
-    event.preventDefault();
+function displayBreweries(breweryData, region){
+  //clears previous breweries on page except for original (used as prototype)
+  $("#info-section").empty();
+  for (var i = 0; i < breweryData.length; i++){
+    var brewInfo = $("<article></article>"); 
+      brewInfo.addClass("brew-info");
 
-    var searchRegion = document.querySelector('#search-input').value;
-    var regionType = document.querySelector('#format-input').value;
-    getBreweryData(searchRegion, regionType);
-    getWikiPage(searchRegion);
-  }
+          //create & display name
+      var breweryName = $("<h4>" + breweryData[i].name + "</h4>");
+      brewInfo.append(breweryName);
 
-  function printResults(resultObj) {
-    console.log(resultObj);
-  
-    // set up `<div>` to hold result content
-    var resultCard = document.createElement('div');
-    resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
-  
-    var resultBody = document.createElement('div');
-    resultBody.classList.add('card-body');
-    resultCard.append(resultBody);
-  
-    var title = document.createElement('h3');
-    title.textContent = resultObj.title;
-  
-    var bodyContent = document.createElement('p');
-    bodyContent.innerHTML =
-      '<strong>Date:</strong> ' + resultObj.date + '<br/>';
-      if (resultObj.description) {
-        bodyContent.innerHTML +=
-          '<strong>Description:</strong> ' + resultObj.description[0];
-      } else {
-        bodyContent.innerHTML +=
-          '<strong>Description:</strong>  No description for this entry.';
+      //create & display type (if it exists)
+      if (breweryData[i].brewery_type != null) {
+          var brewType = $("<p>Brew Type: " + capitalize(breweryData[i].brewery_type) + "</p>");
+          brewInfo.append(brewType);
       }
-    
-      var linkButton = document.createElement('a');
-      linkButton.textContent = 'Read More';
-      linkButton.setAttribute('href', resultObj.url);
-      linkButton.classList.add('btn', 'btn-dark');
-    
-      resultBody.append(title, bodyContent, linkButton);
-    
-      resultContent.append(resultCard);
-  
+
+      //create & display street (if it exists)
+      if (breweryData[i].street != null) {
+          var brewStreet = $("<p>Address: " + capitalize(breweryData[i].street) + "</p>");
+          brewInfo.append(brewStreet);
+      }
+
+      //create & display city (if it exists)
+      if (breweryData[i].city != null) {
+          var brewCity = $("<p>City: " + capitalize(breweryData[i].city) + "</p>");
+          brewInfo.append(brewCity);
+      }
+
+      //create & display state (if it exists)
+      if (breweryData[i].state != null) {
+          var brewState = $("<p>State: " + capitalize(breweryData[i].state) + "</p>");
+          brewInfo.append(brewState);
+      }
+
+      //create & display phone number (if it exists)
+      if (breweryData[i].phone != null) {
+          var brewPhone = $("<p>Phone Number: " + breweryData[i].phone + "</p>");
+          brewInfo.append(brewPhone);
+      }
+
+      //create & display link to website (if it exists)
+      if (breweryData[i].website_url != null) {
+          var breweryWebsite = $("<a>Website: " + breweryData[i].website_url + "</a>");
+          breweryWebsite.attr("href", breweryData[i].website_url);
+          breweryWebsite.css("color", "navyblue");
+          brewInfo.append(breweryWebsite);
+      }
+      $("#info-section").append(brewInfo);
   }
+}
+
+//handles search event and triggers API connection
+function searchFormSubmit(event) {
+  event.preventDefault();
+
+  var searchRegion = document.querySelector('#search-input').value;
+  getBreweryData(searchRegion);
+}
+
+  function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}
