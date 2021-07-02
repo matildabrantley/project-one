@@ -15,8 +15,10 @@ async function getWikiPage(page) {
     page = resolveWikiAmbiguity(page);
     console.log(page);
 
+    //ajax function to access wiki API to retireve first few paragraphs and first image
     $.ajax({
         type: "GET",
+        //create url from parameters
         url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + page + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
@@ -33,7 +35,7 @@ async function getWikiPage(page) {
     });
 };
 
-async function getBreweryData(region) {
+function getBreweryData(region) {
     var regionType = document.querySelector('#format-input').value;
     if (regionType != "state" && regionType != "city")
         regionType = "city";
@@ -49,19 +51,15 @@ async function getBreweryData(region) {
         console.log(region);
     }
 
+    //create url from parameters
     var url = "https://api.openbrewerydb.org/breweries?by_"+ regionType + "=" + region;
-    //return fetch Promise of region's brewery data
-    return fetch(url)
+    
+    fetch(url)
     .then(function (response) {
-        //console.log(response);
         return response.json();
     })
     .then(function (breweryData) {
-        // console.log("Region results");
-        // console.log(breweryData);
-
        displayBreweries(breweryData, region)
-        return breweryData;
     });
 };
 
@@ -101,9 +99,7 @@ function displayBreweries(breweryData, region){
         $('#full-results').append(detailedResults);
     }
 
-    
     $('.grid-container').css("grid-template-columns", "0fr 1fr 1fr");
-
 }
 
 function displayBreweryInfo (e) {
@@ -236,14 +232,23 @@ function displayStoredSearches() {
     }
 }
 
+//handles search event and triggers API connection
 function searchFormSubmit(event) {
     event.preventDefault();
 
     var searchRegion = document.querySelector('#search-input').value;
+    var regionType = document.querySelector('#format-input').value;
     getBreweryData(searchRegion);
     getWikiPage(searchRegion);
+
+    //set localStorage for search-results.html to retrieve
+    localStorage.setItem("indexSearchRegion", searchRegion);
+    localStorage.setItem("indexRegionType", searchRegion);
 }
 
+// wikipedia searches lead to many ambiguities, so this resolves
+// many of the major cases that users would frequently encounter
+// (not entirely feasible to programmatically deal with all possible cases)
 function resolveWikiAmbiguity(page) {
     page = capitalize(page);
     
@@ -285,4 +290,5 @@ function resolveWikiAmbiguity(page) {
     return page;
 }
 
+//makes first letter of string capital
 function capitalize(word) {return word[0].toUpperCase() + word.slice(1);}

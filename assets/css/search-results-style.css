@@ -1,46 +1,46 @@
-#wrapper {
-    position: fixed;
-    top: 1vh;
-    background: rgba(0,0,0,.60);
-    width: 99vw;
-    height: 99vh;
-    color: white;
-    font-family: 'Josefin Sans', sans-serif;
-}
 
 h1 {
-    font-size: 5rem;
+    font-size: 5vw;
     font-family: 'Big Shoulders Stencil Display', cursive;
     color: white;
+}
+
+h1:hover {
+    font-size: 5vw;
+    text-decoration: underline overline;
 }
 
 h1 span {
     color: rgb(253, 253, 197);
 }
 
-img {
+/* img {
     border: double white 10px;
-}
+} */
 
 body {
     background-image: url("/assets/images/buncha-beer.jpeg");
     background-size: contain;
-    background-size: cover;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #search {
-    width: 30vw;
-    height: 50vh;
-    border-radius: 5px;;
+    width: 40vw;
+    min-width: 200px;
+    height: 30vh;
+    border-radius: 5px;
+    margin-bottom: 5%;
 }
+
+/* a slight focus indicator */
+.btn:hover, #search-input:hover, #format-input:hover {
+    box-shadow: 0px 0px 4px 3px gray;
+}
+
 
 .bg-dark {
     background: rgba(1,1,1,.8);
-}
-  
-section {
-    grid-area: brew-info;
-    margin-left: 5%;
 }
 
 main {
@@ -61,4 +61,73 @@ main {
 #format-input {
     background-color: rgba(255, 255, 0, 0.323);
     border-radius: 2px;
+}
+
+#info-section {
+    top: 60vh;
+}
+
+.brew-info {
+    position: block;
+    font-size: 1.2vw;
+    padding-left: 10px;
+    background: rgba(0,0,0,.75);
+    border: double black 10px;
+    width: 35vw;
+    height: 50vh;
+    float: left;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+/* half cards on right */
+.brew-info:nth-child(2n){
+    float: right;
+    text-align: right;
+}
+
+/* The remaining styles alternate dark/light cards for brewery info in a diagonal pattern*/
+.brew-info:nth-child(4n-1){
+    background-color: rgba(200,200,200,.80);
+    border: double white 10px;
+    color: black;
+}
+
+.brew-info:nth-child(4n-2){
+    background-color: rgba(200,200,200,.80);
+    border: double white 10px;
+    color: black;
+}
+
+/* .brew-info:nth-child(4n){
+    background-color: rgba(150,150,150,.80);
+    color: black;
+} */
+
+.brew-info > * {
+    padding: 3px;
+}
+
+.brew-info > *:hover {
+    background-color: black;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 3px gray;
+    padding-left: 20px;
+    text-decoration: underline;
+}
+
+.brew-info:nth-child(4n-1) > *:hover{
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 3px rgba(80,80,80);
+    padding-right: 20px;
+    text-decoration: underline;
+}
+
+.brew-info:nth-child(4n-2) > *:hover{
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 3px rgba(80,80,80);
+    padding-right: 20px;
+    text-decoration: underline;
 }
