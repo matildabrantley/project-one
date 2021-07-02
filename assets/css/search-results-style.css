@@ -19,7 +19,7 @@ h1 span {
 } */
 
 body {
-    background-image: url("/assets/images/buncha-beer.jpeg");
+    background-image: url("../images/buncha-beer.jpeg");
     background-size: contain;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
